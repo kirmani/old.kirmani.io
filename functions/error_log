@@ -1,0 +1,2 @@
+[18-Jul-2013 13:33:27 America/Denver] PHP Fatal error:  Call to undefined function get_template_directory_uri() in /home/sean/public_html/wp-content/themes/mytheme/functions/style-custom.php on line 3
+[18-Jul-2013 13:33:53 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home/sean/public_html/wp-content/themes/mytheme/functions/style-custom.php on line 3

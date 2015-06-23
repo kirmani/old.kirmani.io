@@ -1,0 +1,422 @@
+#superwrapper { background-color: #fff }
+#intro {
+ background: 0 0 #ffffff;
+ min-height:755px;
+ text-align: center;
+ -webkit-backface-visibility: hidden;
+ color: #292929;
+}
+.wrapper{width:700px;position:relative;margin:0 auto;}
+.first-wrapper{width:100%;position:absolute;margin:0 auto;height: 100%; padding-top: 100px}
+
+#intro a {
+	color: #d73c2c;
+}
+
+.headline-front {
+	position:absolute;
+	bottom:0;
+	margin-bottom:30px;
+}
+#logo {
+	background:url(../images/logo.png) no-repeat 0 0;
+	width:87px;
+	height:85px;
+	text-indent:-999em;
+	margin-top: 16px;
+	display: inline-block;
+	position: relative;
+	background-size: 87px 85px;
+}
+
+#logo .frame {
+	position: absolute;
+	left: -8px;
+	top: -8px;
+	background: url(../images/logo-frame.png) no-repeat 0 0;
+	width: 103px;
+	height: 101px;
+	-moz-transform: scale(0.8);
+	-ms-transform: scale(0.8);
+	-webkit-transform:scale(0.8);
+	transform: scale(0.8);
+	-webkit-transition: all 0.2s ease-in-out 0s;
+	-moz-transition: all 0.2s ease-in-out 0s;
+	transition: all 0.2s ease-in-out 0s;
+}
+
+#logo:hover .frame {
+	-webkit-transform:scale(1);
+	-moz-transform: scale(1);
+	-ms-transform: scale(1);
+	transform: scale(1);
+}
+
+#intro h2 {
+	font-size: 45px;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 62px;
+	margin-top: 98px;
+}
+
+#intro h2 em {
+	font-style: normal;
+	color: #d73c2c;
+}
+
+#intro h3 {
+	font-size: 18px;
+	font-weight: normal;
+	margin-top: 80px;
+}
+
+.wrapper{width:980px;position:relative;margin:0 auto;}
+
+#blog{
+	background: url(../images/blog.jpg) no-repeat center 0 #000;
+	color: #fff;
+	height:520px;
+}
+.section1 .outerwrapper {
+	background: url(../images/port-gray.png) no-repeat center 0;
+	background-size: 666px 83px;
+	height: 83px;
+}
+.section1 .headline-front {
+	font-family:'Graduate' !important;
+}
+@media all and (max-width: 1024px){
+	.headline-front, .portfolio, #front-blog {
+		font-size:2em !important;
+	}
+	.headline-front span {
+		font-size:1em !important;
+		line-height: 1em !important;
+	}
+	.section2 img {
+		width:100%;
+		max-width:938px;
+		height: auto;
+	}
+}
+#blog .outerwrapper {
+	background: url(../images/port-gray.png) no-repeat center 0;
+	background-size: 666px 83px;
+	height: 83px;
+}
+.divider-white {
+	background: url(../images/divider-white.png) no-repeat center 0 #ffffff;
+	color: #1c1c1c;
+	overflow: hidden;
+}
+#about{
+	background: url(../images/port-blog.png) no-repeat center 0 #fff;
+	overflow: hidden;
+	height:520px;
+}
+.light {
+	background-color:#f5f5f5 !important;
+	color: #292929 !important;
+}
+.dark {
+	background-color:#1c1c1c !important;
+	color: #ffffff !important;
+}
+#footer{display: inline-block; text-align:center;background:url(../images/port-black.png) no-repeat center 0; width: 100%;}#footer h1{display:inline-block;margin:138px 0 0;line-height: 1.4em; font-weight: bolder; }
+
+#footer .article-footer p{margin-top:0;}#footer .article-footer{text-align:left;width:508px;background:no-repeat 0 50px; background-size: 110px 110px; margin:0 0 50px 165px;padding:55px 0 10px 140px; }
+
+.section1{
+	background: url(../images/ut.png) no-repeat center 0 #000;
+	color: #fff;
+	height:520px;
+}
+
+.section1 .headline-front {
+	text-align:center; 
+	font-size: 48px; 
+	position: relative; 
+	top: 100px;
+}
+.section1 .headline-front span {
+	font-family: 'Satisfy', cursive;
+	display: inline-block;
+    line-height: 48px;
+
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+	
+	padding: 24px;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+	
+}
+.section2{
+	background: url(../images/port-ut.png) no-repeat center 0 #ffffff;
+	color: #333;
+	overflow: hidden;
+	height:1100px;
+}
+.section2 .headline-front {
+	text-align:center; 
+	font-size: 48px; 
+	position: relative; 
+	margin-top: 150px;
+	color: #d35125;
+}
+.section2 .tagline {
+	text-align:center; 
+	font-size: 19px; 
+	position: relative; 
+	margin-top: 40px;
+	color: #333;
+}
+.section2 .headline-front span {
+	font-family: 'Satisfy', cursive;
+	display: inline-block;
+    line-height: 48px;
+
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+	
+	padding: 24px;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+	
+}
+.page-container {
+    position: relative;
+    overflow: hidden;
+}
+.page-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#more{
+	background: url(../images/more.png) no-repeat center 0 #000;
+	color: #fff;
+	height:406px;
+}
+.section1 .outerwrapper {
+	background: url(../images/port-gray.png) no-repeat center 0;
+	background-size: 666px 83px;
+	height: 83px;
+}
+#more .outerwrapper {
+	background: url(../images/port-gray.png) no-repeat center 0;
+	background-size: 666px 83px;
+	height: 83px;
+}
+.sunfish-section{
+	background: url(../images/port-white.png) no-repeat center 0 #f2f2f2;
+	color: #333;
+	overflow: hidden;
+}
+.sunfish-section .tagline a{
+	color: #1392bd;
+}
+.sunfish-section .tagline a:hover{
+	text-decoration:underline;
+}
+.sunfish-section .headline-front {
+	text-align:center; 
+	font-size: 48px; 
+	position: relative; 
+	margin-top: 150px;
+	color: #000;
+}
+.sunfish-section .tagline {
+	text-align:center; 
+	font-size: 19px; 
+	position: relative; 
+	margin-top: 40px;
+	color: #333;
+	width: 700px;
+	margin:0 auto;
+}
+.sunfish-section .headline-front span a {
+	color: #1392bd;
+} 
+.sunfish {
+	position: relative;
+}
+.sunfish a:before {
+	content: "";
+	margin: 0 auto;
+    height: 2px;
+    background-color: #1392bd;
+    position: absolute;
+    left: 0px;
+    bottom: 3px;
+    right: 0px;
+    transition: all 0.35s ease-in-out 0s;
+	-webkit-transition: all 0.35s ease-in-out 0s;
+    transform: scaleX(0);
+	-webkit-transform: scaleX(0);
+}
+.sunfish a:hover:before {
+	-webkit-transform: scaleX(1);
+  	transform: scaleX(1);
+}
+.section3{
+	background: url(../images/port-white.png) no-repeat center 0 #f2f2f2;
+	color: #333;
+	overflow: hidden;
+}
+.section3 .headline-front {
+	text-align:center; 
+	font-size: 48px; 
+	position: relative; 
+	margin-top: 150px;
+	color: #d35125;
+}
+.section3 .tagline {
+	text-align:center; 
+	font-size: 19px; 
+	position: relative; 
+	margin-top: 40px;
+	color: #333;
+	width: 700px;
+	margin: 0 auto;
+}
+.section3 .headline-front span {
+	font-family: 'Satisfy', cursive;
+	display: inline-block;
+    line-height: 48px;
+
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+	
+	padding: 24px;
+    color: white;
+    text-align: center;
+    font-size: 1em;
+	
+} 
+.content_block, .section, .headline-front {
+	font-family: 'PT Serif', Georgia, serif !important;
+}
+.hide-me{
+	opacity: 0;
+}
+#front-blog a:before {
+	content: "";
+	margin: 0 auto;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    left: 0px;
+    bottom: 3px;
+    right: 0px;
+    transition: all 0.35s ease-in-out 0s;
+	-webkit-transition: all 0.35s ease-in-out 0s;
+    transform: scaleX(0);
+	-webkit-transform: scaleX(0);
+}
+#front-blog a:hover:before {
+	-webkit-transform: scaleX(1);
+  	transform: scaleX(1);
+}
+
+/* Business Card Flip */
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+	-webkit-perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+		-webkit-transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 490px;
+	height: 280px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	-webkit-transition: 0.6s;
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	background:url(../images/card-front.png);
+	background-size:490px 280px;
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+	background:url(../images/card-back.png);
+	background-size:490px 280px;
+}
+.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
+	transform: rotateY(180deg);
+	-webkit-transform: rotateY(180deg);
+}
+.vertical.flip-container {
+	position: relative;
+	margin: 120px auto 50px;
+}
+
+	.vertical .back {
+		transform: rotateX(180deg);
+		-webkit-transform: rotateX(180deg);
+	}
+
+	.vertical.flip-container .flipper {
+		transform-origin: 100% 140px; /* half of height */
+		-webkit-transform-origin: 100% 140px;
+	}
+
+	.vertical.flip-container:hover .flipper {
+		transform: rotateX(-180deg);
+		-webkit-transform: rotateX(-180deg);
+	}
+/* End Business Card Flip */
+
+#blog .wrapper {
+	height: 500px;
+}
+/*
+.post {
+	font-family: 'HelveticaNeue-Light', Arial, Helvetica, sans-serif;
+	margin: 20px 0;
+}
+.post h2 {
+	font-size: 20px;
+	border:none;
+}
+.post .byline {
+	display: block;
+	color: #666;
+	font-size:17px;
+	text-align: left;
+}
+.post .byline .published {
+	border: none;
+}
+*/
