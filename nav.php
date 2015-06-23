@@ -1,4 +1,3 @@
-<div id="headertop"></div>
 <div class="story-menu">
 	<div id="logo2">
         <div class="menu-icon" width="23" height="15" viewport="0 0 23 15" version="1.1" xmlns="https://www.w3.org/2000/svg">

@@ -6,33 +6,12 @@
 
     header("Content-type: text/css; charset: UTF-8");
     header("Cache-control: must-revalidate");  ?>
-#logo2 {
-background-image:url(<?php echo(stripslashes (get_option('sek_nav_logo'))) ?> );
-}
 html {
 	background-color: <?php echo(stripslashes (get_option('sek_content_bgcolor'))) ?>;
     }
 #primary{
 	background-color: <?php echo(stripslashes (get_option('sek_content_bgcolor'))) ?>;
-	<?php if(get_option('sek_show_shadow') == 'no') { ?> box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; <?php } ?>
     margin-top: <?php echo(stripslashes (get_option('sek_content_topmargin'))) ?>px !important;
-}
-#intro2 {
-	height: <?php echo(stripslashes (get_option('sek_nav_height'))) ?>px;
-    <?php if (get_option('sek_nav') == 'absolute') { ?> position: absolute; <?php }?>;
-    background-color: <?php echo(stripslashes (get_option('sek_nav_bgcolor'))) ?>;
-    <?php if (get_option('sek_nav_width') == 'fixed width') { ?> width:<?php echo(stripslashes (get_option('sek_width'))) ?>px; <?php } ?>;
-}
-.intro2-full {
-	height: <?php echo(stripslashes (get_option('sek_nav_animation_height'))) ?>px !important;
-}
-#header-info {
-	color: <?php echo(stripslashes (get_option('sek_nav_color'))) ?>;
-}
-.footertop {
-	background:url(<?php echo(stripslashes (get_option('sek_footer_top_image'))) ?>);
-    margin-top: <?php echo(stripslashes (get_option('sek_footer_margin'))) ?>px;
-    height: <?php echo(stripslashes (get_option('sek_footer_top_height'))) ?>px;
 }
 .container_12 {
 	max-width:<?php if (get_option('sek_width') != '') {echo(stripslashes (get_option('sek_width'))); } ?>px;
@@ -42,14 +21,6 @@ a {
 }
 a:hover {
 	color: <?php echo(stripslashes (get_option('sek_type_link_color_hover'))) ?>
-}
-#headertop {
-	height:<?php if (get_option('sek_header_height') != '') {echo(stripslashes (get_option('sek_header_height'))); } ?>px;
-	<?php if (get_option('sek_show_header') == 'no') { ?>display: none; <?php } ?>;
-    background-color: <?php echo(stripslashes (get_option('sek_header_bgcolor'))); ?>;
-    background-image:url('<?php echo(stripslashes (get_option('sek_header_bgimg'))); ?>');
-    background-size:<?php echo(stripslashes (get_option('sek_header_bgimgsize'))); ?>;  color: <?php echo(stripslashes (get_option('sek_header_color'))); ?>;
-    <?php if (get_option('sek_header_width') == 'fixed width') { ?> width:<?php echo(stripslashes (get_option('sek_width'))) ?>px; margin: 0 auto; <?php } ?>;
 }
 h1 {
 	font-size: <?php echo(stripslashes (get_option('sek_h1_font_size'))) ?>;

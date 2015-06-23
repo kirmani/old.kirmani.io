@@ -204,7 +204,7 @@ $(function () {
 				}
 				break;
 			case "MAX":
-				$('#term').animate({height: $(window).height()}, 500, function() {});
+				$('#term').animate({height: window.innerHeight}, 500, function() {});
 				break;
 			case "MIN":
 				$('#term').animate({height: 100}, 500, function() {});
