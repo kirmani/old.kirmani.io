@@ -18,7 +18,6 @@
 
     <link href="<?php bloginfo('stylesheet_url'); ?>" rel="stylesheet" type="text/css" />
     <link href="<?php echo THEME_PATH; ?>/css/typography.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo THEME_PATH; ?>/css/front.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="<?php echo THEME_PATH; ?>/style-custom.php" media="screen" type="text/css" />
 
     <!--Fonts Begin-->

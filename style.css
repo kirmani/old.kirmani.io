@@ -1614,3 +1614,6 @@ em {
 .alignright {
 	float: right;
 }
+.hide-me {
+    opacity: 0;
+}
