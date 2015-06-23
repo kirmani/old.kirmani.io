@@ -1,5 +1,0 @@
-[18-Jul-2013 13:22:54 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home/sean/public_html/wp-content/themes/mytheme/css/style-custom.php on line 2
-[18-Jul-2013 13:23:15 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home/sean/public_html/wp-content/themes/mytheme/css/style-custom.php on line 2
-[18-Jul-2013 13:23:53 America/Denver] PHP Fatal error:  Call to undefined function get_option() in /home/sean/public_html/wp-content/themes/mytheme/css/style-custom.php on line 2
-[18-Jul-2013 13:25:18 America/Denver] PHP Warning:  require_once(TEMPLATEPATH/functions/theme-options.php) [<a href='function.require-once'>function.require-once</a>]: failed to open stream: No such file or directory in /home/sean/public_html/wp-content/themes/mytheme/css/style-custom.php on line 4
-[18-Jul-2013 13:25:18 America/Denver] PHP Fatal error:  require_once() [<a href='function.require'>function.require</a>]: Failed opening required 'TEMPLATEPATH/functions/theme-options.php' (include_path='.:/usr/lib/php:/usr/local/lib/php') in /home/sean/public_html/wp-content/themes/mytheme/css/style-custom.php on line 4
