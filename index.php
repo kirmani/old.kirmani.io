@@ -82,12 +82,12 @@ if (!empty( $next_post )): ?>
                                 <?php endif; ?>
                             </div>
                             <div class="headline inner-title headline-top">
-                                <h1 class="title"><?php the_title(); ?></h1>
-                                <div class="subtitle"><?php the_subtitle(); ?></div>
-                                <h3 class="author"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?>
+                                <h1 class="title"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
+                                <div class="subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></div>
+                                <?php if (!is_page()) { ?><h3 class="author"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?>
                                 <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
                                     <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
-                                <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3>
+                                    <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3><?php } ?>
                             </div>
     <script>
     var headlineHeight = $("#header-container.withImage .headline-top").height();
@@ -104,24 +104,28 @@ $(window).scroll(function(e) {
                     <?php else: ?>
                         <div id="header-container" class="inner">
                             <div class="headline inner-title">
-                                <h1 class="title" style="color:#000; text-shadow:none !important"><?php the_title(); ?></h1>
-                                <div class="subtitle" style="color:#222; text-shadow:none !important"><?php the_subtitle(); ?></div>
+
+                                <h1 class="title" style="color:#000; text-shadow:none !important"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
+                                <div class="subtitle" style="color:#222; text-shadow:none !important"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></div>
                                 <br />
-                                <h3 class="author noImage" style="text-shadow:none !important;color: rgba(0,0,0,0.65)"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
+                                <?php if (!is_page()) { ?><h3 class="author noImage" style="text-shadow:none !important;color: rgba(0,0,0,0.65)"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
         <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
-    <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3>
+        <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3><?php } ?>
                             </div>
                         </div>
                     <?php endif ?>
     <script>
     var str = "<?php echo do_shortcode('[est_time]'); ?>";
-str = str.substring(0, str.length - 1);
-document.getElementById('ttr').innerHTML = str;
-</script>
+    if (str[str.length - 1] == 's') {
+        str = str.substring(0, str.length - 1);
+    }
+    document.getElementById('ttr').innerHTML = str;
+    </script>
 
 <div class="box-wrap2">
                         <div id="primary" class="site-content">
                             <div id="content" class="blog"  role="main">
+                                <?php if (!is_page()) { ?>
                                 <div class="story-navigation">
                                     <div class="column grid_6 previous">
                                         <?php previous_post('<strong>Previous Story</strong>%', '', 'yes'); ?>
@@ -130,6 +134,7 @@ document.getElementById('ttr').innerHTML = str;
                                         <?php next_post('<strong>Next Story</strong>%', '', 'yes'); ?>
                                     </div>
                                 </div>
+                                <?php } ?>
                                 <?php the_content(); ?>
                                 <?php $editURL = get_edit_post_link(); ?>
     <script>
@@ -143,10 +148,10 @@ editURL = editURL.replace("&amp;","&");
                                     <div id="edit" class="post-options"><p><a href="<?php echo get_delete_post_link( $id ); ?>" title="delete-post">Delete</a></p></div>
                                     <div id="logout" class="post-options"><p><a href="<?php echo wp_logout_url(); ?>" title="Logout">Logout</a></p></div>
                                 </div>
-                                <?php } ?>
+                                <?php } if (!is_page()) { ?>
                                 <div class="archive"><a alt="archive" href="http://sekrim.com/archive/"><img src="<?php echo THEME_PATH; ?>/images/archive.png" width="48" height="48"></a></div>
 <?php $withcomments = "1"; comments_template();
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;?>
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; } ?>
                             </div><!-- #content -->
                         </div><!-- #primary -->
                     </div><!-- .box-wrap2 -->

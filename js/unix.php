@@ -212,50 +212,6 @@ $(function () {
 			case "EDIT":
 				goToURL(editURL);
 				break;
-			case "LOGIN":
-				if (option !== '') {
-					option = option.toUpperCase();
-					switch (option) {
-						case 'SEAN':
-							term.push(function(command, term) {
-									var password = command;
-									if (password == 'sean123') {
-										document.title = "sean@kirmani.io";
-								  		term.push(function(command, term) {
-											var words = command.split('');
-											func = words[0];
-											var option = '';
-											var parameter = '';
-											for (i = 1; i < words.length; i++) {
-												if (i % 2 == 1) {
-													option = words[i];
-													if (i + 1 < words.length) {
-														parameter = words[i+1];
-													}
-												}
-											}
-											func = func.toUpperCase();
-											switch (func) {
-												<?php include('admin.php') ?>
-											}
-										}, {
-											prompt: 'sean@kirmani:/$ '})
-									}
-									else {
-										term.error("Incorrect password");
-									}
-							 	}, {
-									prompt: 'Password: '
-								});
-							break;
-						default:
-							term.echo("Login: Usage: login [user]");
-							break;
-					}
-				} else {
-					term.echo("Login: Usage: login [user]");
-				}
-				break;
 			case "":
 				break;
 			default:
@@ -270,7 +226,7 @@ $(function () {
 				break;
 		}
     }, {
-        greetings: 'guest@sekrim:/$ cat welcome.txt\nWelcome to the UniXrim console.\nUse "ls", "cat", and "cd" to navigate the filesystem.',
+        greetings: 'guest@kirmani:/$ cat welcome.txt\nWelcome to the UniXrim console.\nUse "ls", "cat", and "cd" to navigate the filesystem.',
         name: 'js_demo',
         prompt: 'guest@kirmani:/$ ',
 		height: 100,

@@ -32,7 +32,6 @@ set_post_thumbnail_size('autocrop',960, 250, true);
 // smart jquery inclusion
 if (!is_admin()) {
 	wp_deregister_script('jquery');
-	wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"), false, '1.3.2');
 	wp_enqueue_script('jquery');
 }
 

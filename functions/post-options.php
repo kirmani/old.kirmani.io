@@ -33,7 +33,9 @@ function myplugin_inner_custom_box() {
 	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
 
 	// Get the location data if its already been entered
-		$background = get_post_meta($post->ID, '_background', true);
+        $altTitle = get_post_meta($post->ID, '_alt_title', true);
+        $subtitle = get_post_meta($post->ID, '_subtitle', true);
+        $background = get_post_meta($post->ID, '_background', true);
 		$pageWidth = get_post_meta($post->ID, '_page_width', true);
 		$githubURL = get_post_meta($post->ID, '_github', true);
 		$titleCSS = get_post_meta($post->ID, '_title_css', true);
@@ -47,7 +49,9 @@ function myplugin_inner_custom_box() {
         $extraJS = get_post_meta($post->ID, '_extra_js', true);
 
 	// Echo out the field
-		echo '<table class="form-table"><tbody>';
+        echo '<table class="form-table"><tbody>';
+		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Alternate Title</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set an alternate title if you\'d like. Leave it blank to use the default title.</span></label></th><td><input style="width:75%; margin-left: 5px;" name="_alt_title" type="text" value="'.$altTitle.'"></td></tr>';
+		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Subtitle</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">Write an optional subtitle here!</span></label></th><td><input style="width:75%; margin-left: 5px;" name="_subtitle" type="text" value="'.$subtitle.'"></td></tr>';
 		echo '<tr><th style="width:25%"><label for="nzs_section_bg_image"><strong>Background</strong><span style=" display:block; color: #999; margin:5px 0 0 0; line-height: 18px;">Choose a background image for this section.</span></label></th><td><input type="radio" name="_background" id="_background" value="absolute" ';
 		if ($background=="absolute"){echo "checked=\"checked\" ";}
 		echo ' >Absolute<br><input type="radio" name="_background" id="_background" value="fixed" ';
@@ -88,7 +92,9 @@ function myplugin_save_postdata( $post_id, $post ) {
 	// OK, we're authenticated: we need to find and save the data
 	// We'll put it into an array to make it easier to loop though.
 
-	$events_meta['_background'] = $_POST['_background'];
+    $events_meta['_alt_title'] = $_POST['_alt_title'];
+    $events_meta['_subtitle'] = $_POST['_subtitle'];
+    $events_meta['_background'] = $_POST['_background'];
 	$events_meta['_page_width'] = $_POST['_page_width'];
 	$events_meta['_github'] = $_POST['_github'];
 	$events_meta['_title_css'] = $_POST['_title_css'];
