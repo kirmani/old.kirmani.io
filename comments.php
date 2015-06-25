@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
     <?php if (comments_open()) : ?>
-    <div id="disqus_thread"></div>
+    <div id="disqus_thread" class="blog"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'kirmani'; // Required - Replace example with your forum shortname

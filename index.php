@@ -58,9 +58,8 @@ $( document ).ready(function() {
 });
 </script>
         <div class="main-container">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div class="post current">
-                                <div class="container_12">
- <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <?php if (has_post_thumbnail( $post->ID ) ): ?>
                         <script type='text/javascript' src='<?php echo THEME_PATH; ?>/js/index.js'></script>
                         <div id="header-container" class="withImage inner">
@@ -81,6 +80,8 @@ if (!empty( $next_post )): ?>
                                     <div class="next"><span class="arrow"></span><?php next_post('/< %', '', 'yes'); ?></div>
                                 <?php endif; ?>
                             </div>
+
+                            <div class="container_12">
                             <div class="headline inner-title headline-top">
                                 <h1 class="title"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
                                 <div class="subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></div>
@@ -89,20 +90,12 @@ if (!empty( $next_post )): ?>
                                     <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
                                     <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3><?php } ?>
                             </div>
-    <script>
-    var headlineHeight = $("#header-container.withImage .headline-top").height();
-$(function() {
-    $(".withImage .headline-top").css("bottom", headlineHeight + window.innerHeight * 0.1 + "px");
-});
-$(window).scroll(function(e) {
-    $(".withImage .headline-top").css("bottom",  (headlineHeight + window.innerHeight * 0.1) - ($(window).scrollTop() / window.innerHeight) * window.innerHeight * 0.1  + "px");
-    $(".withImage .headline-top").css("opacity",  1 - ($(window).scrollTop() / window.innerHeight));
-});
-</script>
-                            <div class="story-cover-arrow"></div>
+                            </div>
+                                <div class="story-cover-arrow"></div>
                         </div>
                     <?php else: ?>
                         <div id="header-container" class="inner">
+                                <div class="container_12">
                             <div class="headline inner-title">
 
                                 <h1 class="title" style="color:#000; text-shadow:none !important"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
@@ -111,6 +104,7 @@ $(window).scroll(function(e) {
                                 <?php if (!is_page()) { ?><h3 class="author noImage" style="text-shadow:none !important;color: rgba(0,0,0,0.65)"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
         <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
         <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3><?php } ?>
+                            </div>
                             </div>
                         </div>
                     <?php endif ?>
@@ -122,10 +116,10 @@ $(window).scroll(function(e) {
     document.getElementById('ttr').innerHTML = str;
     </script>
 
+                                <div class="container_12">
 <div class="box-wrap2">
                         <div id="primary" class="site-content">
-                            <div id="content" class="blog"  role="main">
-                                <?php if (!is_page()) { ?>
+                                <?php if (is_single()) { ?>
                                 <div class="story-navigation">
                                     <div class="column grid_6 previous">
                                         <?php previous_post('<strong>Previous Story</strong>%', '', 'yes'); ?>
@@ -134,30 +128,70 @@ $(window).scroll(function(e) {
                                         <?php next_post('<strong>Next Story</strong>%', '', 'yes'); ?>
                                     </div>
                                 </div>
+
                                 <?php } ?>
+                            <div id="content" class="blog"  role="main">
                                 <?php the_content(); ?>
-                                <?php $editURL = get_edit_post_link(); ?>
-    <script>
-    var editURL = "<?php echo $editURL; ?>";
-editURL = editURL.replace("&amp;","&");
-</script>
-                                <?php if ( is_user_logged_in() ) { ?>
-                                <div id="admin-bar">
-                                    <div id="new-post" class="post-options"><p><a href="http://sekrim.com/wp-admin/post-new.php">New Post</a></p></div>
-                                    <div id="edit" class="post-options"> <?php edit_post_link('Edit', '<p>', '</p>'); ?></div>
-                                    <div id="edit" class="post-options"><p><a href="<?php echo get_delete_post_link( $id ); ?>" title="delete-post">Delete</a></p></div>
-                                    <div id="logout" class="post-options"><p><a href="<?php echo wp_logout_url(); ?>" title="Logout">Logout</a></p></div>
-                                </div>
-                                <?php } if (!is_page()) { ?>
-                                <div class="archive"><a alt="archive" href="http://sekrim.com/archive/"><img src="<?php echo THEME_PATH; ?>/images/archive.png" width="48" height="48"></a></div>
-<?php $withcomments = "1"; comments_template();
-$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; } ?>
                             </div><!-- #content -->
+                            <div class="post-links">
+                                <a href="<?php echo get_permalink(); ?>#disqus_thread">Comments</a>
+                                <a href="<?php echo get_permalink(); ?>">Permalink</a>
+                                <?php if ( is_user_logged_in() ) { ?>
+                                <a href="http://sekrim.com/wp-admin/post-new.php">New Post</a>
+                                <?php edit_post_link('Edit', '', ''); ?>
+                                <a href="<?php echo get_delete_post_link( $id ); ?>" title="delete-post">Delete</a>
+                                <a href="<?php echo wp_logout_url(); ?>" title="Logout">Logout</a>
+                                <?php } ?>
+                            </div>
+                            <?php if (!is_page()) { ?>
+                                <div class="archive"><a alt="archive" href="http://sekrim.com/archive/"><img src="<?php echo THEME_PATH; ?>/images/archive.png" width="48" height="48"></a></div>
+<?php if (is_single()) { $withcomments = "1" ; comments_template(); } else { ?>
+<?php } $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; } ?>
+
                         </div><!-- #primary -->
                     </div><!-- .box-wrap2 -->
                 </div><!-- .container_12 -->
             </div><!-- .post.current -->
             <!--Start Footer-->
+<script>
+    $(function() {
+        $('.withImage .headline-top').each(function(i) {
+            var headlineHeight = $(this).height();
+            $(this).css('bottom', headlineHeight + window.innerHeight * 0.1 + "px");
+        });
+        $(window).scroll(function(e) {
+            $('.withImage .headline-top').each(function(i) {
+                var headlineHeight = $(this).height();
+                $(this).css("bottom",  (headlineHeight + window.innerHeight * 0.1) - ($(window).scrollTop() - $(this).parent().parent().offset().top) / $(this).parent().parent().height() * window.innerHeight * 0.1  + "px");
+                $(this).css("opacity", 1 - ($(window).scrollTop() - $(this).parent().parent().offset().top) / $(this).parent().parent().height());
+            });
+        });
+
+        $(window).scroll(function(e) {
+            var topOfNav = window.innerHeight/2 - 125;
+            var bottomOfNav = window.innerHeight/2 + 125;
+            var shouldHideNav = false;
+            $('.withImage').each(function(i) {
+                var topOfHeader = $(this).offset().top;
+                var bottomOfHeader = topOfHeader + $(this).height();
+                var distanceFromHeaderToTopOfWindow = topOfHeader - $(window).scrollTop();
+                var distanceFromHeaderToBottomOfWindow = bottomOfHeader - $(window).scrollTop();
+                if ((bottomOfNav > distanceFromHeaderToTopOfWindow && bottomOfNav < distanceFromHeaderToBottomOfWindow) || (topOfNav < distanceFromHeaderToBottomOfWindow && topOfNav > distanceFromHeaderToTopOfWindow)) {
+                    shouldHideNav = true;
+                }
+            });
+            if (shouldHideNav) {
+                $(".story-navigation .previous").css("margin-left",-125);
+                $(".story-navigation .next").css("margin-right",-125);
+            } else {
+                $(".story-navigation .previous").css("margin-left",0);
+                $(".story-navigation .next").css("margin-right",0);
+            }
+        });
+    });
+</script>
+
+
             <div class="post next-post content-hidden">
 <script>
 $( document ).ready(function() {
@@ -170,7 +204,7 @@ $( document ).ready(function() {
     });
 });
 </script>
-<?php
+<?php if (is_single()) {
 $previous  = get_adjacent_post( false, '', true );
 if($previous) :
     $first_post = get_posts('posts_per_page=1&post_status=publish');
@@ -197,10 +231,10 @@ if($first_post) :
     <?php endif; ?>
   <?php endif; ?>
   </div>
-<?php endif; ?>
+<?php endif; } ?>
 <?php if(!$currentHasImage && $previousHasImage) { ?>
 <script>
-$(window).scroll(function(e) {
+/* $(window).scroll(function(e) {
     var body = document.body,
         html = document.documentElement;
     var height = Math.max( body.scrollHeight, body.offsetHeight,
@@ -212,11 +246,11 @@ $(window).scroll(function(e) {
         $(".story-navigation .previous").css("margin-left",0);
         $(".story-navigation .next").css("margin-right",0);
     }
-});
+}); */
 </script>
 <?php } else if ($currentHasImage && $previousHasImage) {?>
 <script>
-$(window).scroll(function(e) {
+/* $(window).scroll(function(e) {
     var body = document.body,
         html = document.documentElement;
     var height = Math.max( body.scrollHeight, body.offsetHeight,
@@ -228,11 +262,11 @@ $(window).scroll(function(e) {
         $(".story-navigation .previous").css("margin-left",0);
         $(".story-navigation .next").css("margin-right",0);
     }
-});
+}); */
 </script>
 <?php } else if ($currentHasImage && !$previousHasImage) { ?>
 <script>
-$(window).scroll(function(e) {
+/* $(window).scroll(function(e) {
     var body = document.body,
         html = document.documentElement;
     var height = Math.max( body.scrollHeight, body.offsetHeight,
@@ -244,10 +278,11 @@ $(window).scroll(function(e) {
         $(".story-navigation .previous").css("margin-left",0);
         $(".story-navigation .next").css("margin-right",0);
     }
-});
+}); */
 </script>
 <?php } ?>
 <!--End Footer-->
+<!--
 <div class="container_12">
     <div class="box-wrap2">
         <div id="primary" class="site-content">
@@ -257,5 +292,54 @@ $(window).scroll(function(e) {
     </div>
 </div>
 </div>
+-->
+<div class="navigation">
+<div class="alignleft"><?php previous_posts_link( '&laquo; Previous Entries' ); ?></div>
+<div class="alignright"><?php next_posts_link( 'Next Entries &raquo;', '' ); ?></div>
+</div>
 <?php endwhile; endif; ?><!--End Loop-->
+</div>
+</div>
+<script>
+(function($) {
+    var INFINITE_SCROLL_BUFFER = 40;
+    $('.main-container').infinitescroll({
+        navSelector: '.navigation .alignright a',
+        nextSelector: '.navigation .alignright a',
+        itemSelector: '.post.current',
+        loadingImg: 'images/ajax-loader.gif',
+        loadingText: 'Loading next post...',
+        animate: false,
+        extraScrollPx: 150,
+        donetext: 'I think we\'ve hit the end, Jim',
+        bufferPx: INFINITE_SCROLL_BUFFER,
+    }, function(arrayOfNewElems) {
+        $('.tint').find('img').each(function(){
+            var imgClass = (this.width/this.height > 1) ? 'wide' : 'tall';
+            $(this).addClass(imgClass);
+            var w = $(this).width();
+            var div_w =$('.tint').width();
+            this.style.left = '50%';
+            this.style.marginLeft = Math.round((div_w-w)/2) + 'px';
+        });
+    });
+    $('#menu-navbar li').each(function() {
+        var menu_item_link_text = $(this).find('a:first').text().toLowerCase();
+        console.log(menu_item_link_text);
+        if (menu_item_link_text.indexOf("feed") >= 0) {
+            console.log("found feed");
+            $(this).addClass('feed');
+        }
+    });
+})(jQuery);
+</script>
+<style>
+#infscr-loading {
+    text-align: center;
+}
+#infscr-loading img {
+    margin: 0 auto;
+    display: inherit !important;
+}
+</style>
 <?php  get_footer();  ?>

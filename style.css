@@ -1,4 +1,21 @@
-e@charset "UTF-8";
+/*
+Theme Name: Kirmani
+Theme URI: https://github.com/kirmani/kirmani.io
+Author: Sean Kirmani <sean@kirmani.io>
+Author URI: https://kirmani.io/
+Description: A clean theme with an emphasis on customization at every level. Kirmani is designed for developers to add custom CSS and JavaScript wherever they need it. Specific pages can have their own custom JS and CSS. There are also a lot of options to customize the theme overall. Everything from color to width. There's been a special focus on the blog. The blog has very different styles of pages with tons of customization for both pages with and without featured images.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, threaded-comments
+Text Domain: kirmani
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+
+
 /* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
 html {
 	margin-top: 0px !important;
@@ -825,7 +842,7 @@ height:360px;
 	left:0;
 }
 #header-container.withImage {
-    position: absolute;
+    position: relative;
 }
 #header-container.withImage .headline {
     margin-top: 0;
@@ -1184,39 +1201,7 @@ ul {
 	margin: 0 auto;
 	left: 0;
 }
-#logout {
-	text-align:right;
-	float:right;
-}
-#new-post, #edit {
-	text-align:left;
-}
-#edit {
-	margin-left:-4px;
-}
-.post-options p a {
-	font-family:slab;
-	color:#333;
-	/* border-top: solid 2px #eee; */
-	padding: 10px 20px;
-	display: inline-block;
-}
-#logout p a {
-	/* border-left:solid 2px #eee; */
-}
-#new-post p a, #edit p a {
-	/* border-right:solid 2px #eee; */
-}
-.post-options a:hover {
-	color: #333;
-	background: #f3f3f3;
-}
-.post-options {
-	display: inline-block;
-}
-#admin-bar {
-	width: 100%;
-}
+
 .menu-item a {
 	font-family: 'HelveticaNeue-Light', Arial, Helvetica, sans-serif;
 	color:#555 !important;
@@ -1591,3 +1576,48 @@ em {
 .hide-me {
     opacity: 0;
 }
+.post .body {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    margin-left: -350px;
+}
+.sub-menu li {
+    padding-left: 30px;
+}
+.sub-menu li a{
+    display: list-item;
+    padding-left: 0px;
+}
+#menu-navbar li.feed {
+    padding-left: 0;
+}
+#menu-navbar li.feed a{
+    display: block;
+    padding-left: 0;
+}
+#menu-navbar li.feed a:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url('https://cdn4.iconfinder.com/data/icons/defaulticon/icons/png/256x256/rss.png');
+    background-size: 16px 16px;
+    margin: 0 6px 0 9px;
+}
+.post-links {
+    margin: 10px 0;
+}
+.post-links a {
+    font-size: 12px;
+    background-color: #eee;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 2px 4px;
+    white-space: nowrap;
+    color: #555;
+}
+.post-links a:hover {
+    color: #999;
+}
+

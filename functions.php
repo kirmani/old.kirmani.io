@@ -220,7 +220,7 @@ add_action( 'widgets_init', 'my_widgets_init' );
 
 //remove paragraphs around images
 // img unautop
-function img_unautop($pee) {
+/* function img_unautop($pee) {
     $pee = preg_replace('/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '<div class="figure">$1</div>', $pee);
     return $pee;
 }
@@ -233,6 +233,7 @@ function blockquote_unautop($pee) {
     return $pee;
 }
 add_filter( 'the_content', 'blockquote_unautop', 30 );
+ */
 
 //Theme Options
 $functions_path = TEMPLATEPATH . '/functions/';
@@ -321,4 +322,5 @@ function enable_front_page_section( $query )
 		$query->query_vars['post_type'] = array( 'page', 'section' );
 }
 add_action( 'pre_get_posts', 'enable_front_page_section' );
+
 ?>

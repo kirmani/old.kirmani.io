@@ -55,6 +55,7 @@
     <script src="<?php echo THEME_PATH; ?>/js/jquery.mousewheel-min.js"></script>
     <script src="<?php echo THEME_PATH; ?>/js/jquery.terminal-0.8.8.min.js"></script>
     <script src="<?php echo THEME_PATH; ?>/js/unix.php"></script>
+    <script src="<?php echo THEME_PATH; ?>/js/jquery.infinitescroll.min.js"></script>
 </head>
 
 <div id="term" id="tilda" class="terminal"></div>
