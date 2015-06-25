@@ -1220,7 +1220,7 @@ ul {
 .current-menu-item {
 	border-radius: 0px;
 }
-.current-menu-item a {
+.current-menu-item>a {
 	color:#d73c2c !important;
 }
 .grid_6 {

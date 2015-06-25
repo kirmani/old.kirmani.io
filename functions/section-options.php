@@ -59,11 +59,11 @@ function add_events_metaboxes() {
 
 function wpt_events_location() {
 	global $post;
-	
+
 	// Noncename needed to verify where the data originated
-	echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" value="' . 
+	echo '<input type="hidden" name="eventmeta_noncename" id="eventmeta_noncename" value="' .
 	wp_create_nonce( plugin_basename(__FILE__) ) . '" />';
-	
+
 	// Get the location data if its already been entered
 		$bgimage = get_post_meta($post->ID, '_bgimage', true);
 		$bgcolor = get_post_meta($post->ID, '_bgcolor', true);
@@ -75,7 +75,7 @@ function wpt_events_location() {
 		$fgheight = get_post_meta($post->ID, '_fgheight', true);
 		$extracss = get_post_meta($post->ID, '_extracss', true);
 		$extrajs = get_post_meta($post->ID, '_extrajs', true);
-	
+
 	// Echo out the field
 		echo '<table class="form-table"><tbody>';
 		echo '<tr><th style="width:25%"><label for="nzs_section_bg_image"><strong>Background Image</strong><span style=" display:block; color: #999; margin:5px 0 0 0; line-height: 18px;">Choose a background image for this section.</span></label></th><td><input type="text" name="_bgimage" id="_bgimage" value="' . $bgimage . '" size="30" style="width:75%; margin-right: 20px; float:left;"><input style="float: left;" type="button" class="button" name="nzs_section_bg_image_button" id="nzs_section_bg_image_button" value="Browse"></td></tr>';
@@ -85,16 +85,16 @@ function wpt_events_location() {
 		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Foreground Height</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set a foreground height to overlay over the background image.</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><input style="width:75px; margin-left: 5px;" class="tz-color" name="_fgheight" id="_fgheight" type="text" value="' . $fgheight .'"></td></tr>';
 		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Headline Color</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set a custom headline color using the color picker, or enter a hex value (i.e #fff).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><input style="width:75px; margin-left: 5px;" class="tz-color" name="_headlinecolor" id="_headlinecolor" type="text" value="' . $headlinecolor .'"></td></tr>';
 		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Headline Font Size</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set a headline font size (i.e 48px).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><input style="width:75px; margin-left: 5px;" class="tz-color" name="_headlinesize" id="_headlinesize" type="text" value="' . $headlinesize .'"></td></tr>';
-		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Top Margin</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set the distance from the bottom of the last post to the top of this margin (i.e 182px).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><input style="width:75px; margin-left: 5px;" class="tz-color" name="_topmargin" id="_topmargin" type="text" value="' . $topmargin .'"></td></tr>'; 
-		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Extra CSS</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set the distance from the bottom of the last post to the top of this margin (i.e 182px).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><textarea style="width:75%; height:100px; margin-left: 5px;" class="tz-color" name="_extracss" id="_extracss" type="text" value="'.$extracss.'"> '.$extracss.'</textarea></td></tr>';  
-		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Extra JavaScript</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set the distance from the bottom of the last post to the top of this margin (i.e 182px).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><textarea style="width:75%; height:100px; margin-left: 5px;" class="tz-color" name="_extrajs" id="_extrajs" type="text" value="'.$extrajs.'"> '.$extrajs.'</textarea></td></tr>';              
+		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Top Margin</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set the distance from the bottom of the last post to the top of this margin (i.e 182px).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><input style="width:75px; margin-left: 5px;" class="tz-color" name="_topmargin" id="_topmargin" type="text" value="' . $topmargin .'"></td></tr>';
+		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Extra CSS</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set the distance from the bottom of the last post to the top of this margin (i.e 182px).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><textarea style="width:75%; height:100px; margin-left: 5px;" class="tz-color" name="_extracss" id="_extracss" type="text" value="'.$extracss.'">'.$extracss.'</textarea></td></tr>';
+		echo '<tr><th style="width:25%"><label for="nzs_section_bg_color"><strong>Extra JavaScript</strong><span style=" display:block; color:#999; margin:5px 0 0 0; line-height: 18px;">You can set the distance from the bottom of the last post to the top of this margin (i.e 182px).</span></label></th><td><div id="nzs_section_bg_color_picker" class="colorSelector"><div></div></div><textarea style="width:75%; height:100px; margin-left: 5px;" class="tz-color" name="_extrajs" id="_extrajs" type="text" value="'.$extrajs.'">'.$extrajs.'</textarea></td></tr>';
 		echo '</tbody></table>';
 }
 
 // Save the Metabox Data
 
 function wpt_save_events_meta($post_id, $post) {
-	
+
 	// verify this came from the our screen and with proper authorization,
 	// because save_post can be triggered at other times
 	if ( !wp_verify_nonce( $_POST['eventmeta_noncename'], plugin_basename(__FILE__) )) {
@@ -107,7 +107,7 @@ function wpt_save_events_meta($post_id, $post) {
 
 	// OK, we're authenticated: we need to find and save the data
 	// We'll put it into an array to make it easier to loop though.
-	
+
 	$events_meta['_bgimage'] = $_POST['_bgimage'];
 	$events_meta['_bgcolor'] = $_POST['_bgcolor'];
 	$events_meta['_headlinecolor'] = $_POST['_headlinecolor'];
@@ -118,10 +118,10 @@ function wpt_save_events_meta($post_id, $post) {
 	$events_meta['_fgheight'] = $_POST['_fgheight'];
 	$events_meta['_extracss'] = $_POST['_extracss'];
 	$events_meta['_extrajs'] = $_POST['_extrajs'];
-	
-	
+
+
 	// Add values of $events_meta as custom fields
-	
+
 	foreach ($events_meta as $key => $value) { // Cycle through the $events_meta array!
 		if( $post->post_type == 'revision' ) return; // Don't store custom data twice
 		$value = implode(',', (array)$value); // If $value is an array, make it a CSV (unlikely)
