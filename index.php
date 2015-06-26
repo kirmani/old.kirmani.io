@@ -133,7 +133,7 @@ if (!empty( $next_post )): ?>
                             <div id="content" class="blog"  role="main">
                                 <?php the_content(); ?>
                             </div><!-- #content -->
-                            <div class="post-links">
+                            <div class="post-links blog">
                                 <a href="<?php echo get_permalink(); ?>#disqus_thread">Comments</a>
                                 <a href="<?php echo get_permalink(); ?>">Permalink</a>
                                 <?php if ( is_user_logged_in() ) { ?>
