@@ -61,7 +61,7 @@ $( document ).ready(function() {
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <div class="post current">
                     <?php if (has_post_thumbnail( $post->ID ) ): ?>
-                        <script type='text/javascript' src='<?php echo THEME_PATH; ?>/js/index.js'></script>
+                        <script type='text/javascript' src='<?php echo THEME_PATH; ?>/static/js/index.js'></script>
                         <div id="header-container" class="withImage inner">
 <?php
 $currentHasImage = true;
@@ -144,7 +144,7 @@ if (!empty( $next_post )): ?>
                                 <?php } ?>
                             </div>
                             <?php if (!is_page()) { ?>
-                                <div class="archive"><a alt="archive" href="http://sekrim.com/archive/"><img src="<?php echo THEME_PATH; ?>/images/archive.png" width="48" height="48"></a></div>
+                                <div class="archive"><a alt="archive" href="/archive"><img src="<?php echo THEME_PATH; ?>/static/images/archive.png" width="48" height="48"></a></div>
 <?php if (is_single()) { $withcomments = "1" ; comments_template(); } else { ?>
 <?php } $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; } ?>
 
