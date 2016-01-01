@@ -1,6 +1,7 @@
 body {
   font-size: 100%;
 	font-family: 'HelveticaNeue-Light', Arial, Helvetica, sans-serif;
+  color: #333;
 }
 
 body, caption, th, td, input, textarea, select, option, legend, fieldset, h1, h2, h3, h4, h5, h6, p {
@@ -104,6 +105,9 @@ h4 {
 blockquote {
   font-size: 1.125em;
   line-height: 1.25;
+  border-left: 5px solid #333;
+  padding: 0 2em;
+  margin: 1em 0;
 }
 
 @media (min-width: 43.75) {
