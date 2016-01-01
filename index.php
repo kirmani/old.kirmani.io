@@ -82,9 +82,9 @@ if (!empty( $next_post )): ?>
                             </div>
 
                             <div class="container_12">
-                            <div class="headline inner-title headline-top">
+                            <div class="headline inner-title headline-top light">
                                 <h1 class="title"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
-                                <div class="subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></div>
+                                <h2 class="subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></h2>
                                 <?php if (!is_page()) { ?><h5 class="author"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?>
                                 <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
                                     <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
@@ -99,7 +99,7 @@ if (!empty( $next_post )): ?>
                             <div class="headline inner-title">
 
                                 <h1 class="title" style="color:#000; text-shadow:none !important"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
-                                <div class="subtitle" style="color:#222; text-shadow:none !important"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></div>
+                                <h2 class="subtitle" style="color:#222; text-shadow:none !important"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></h2>
                                 <br />
                                 <?php if (!is_page()) { ?><h5 class="author noImage" style="text-shadow:none !important;color: rgba(0,0,0,0.65)"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
         <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
@@ -218,11 +218,11 @@ if($first_post) :
                                         <img alt="" src="<?php echo $image[0]; ?>" />
                                     </div>
                                 </a>
-                                <div class="headline inner-title" style="top:110px !important">
+                                <div class="headline light inner-title" style="top:110px !important">
                                 <hr style="border-top:1px solid #dededc">
                                 <h5 class="author"><strong>NEXT IN YOUR READING LIST</strong></h5><br />
                                 <h1 class="title"><?php echo $previous->post_title ?></h1>
-                                <div class="subtitle"><?php get_the_subtitle($previous) ?></div>
+                                <h2 class="subtitle"><?php get_the_subtitle($previous) ?></h2>
                                 <?php $author_id=$previous->post_author; ?>
             <h5 class="author"><?php echo get_avatar( get_the_author_meta('ID'), 30 ); ?> <?php echo the_author_meta( 'first_name' , $author_id ); ?> <?php echo the_author_meta( 'last_name' , $author_id ); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
     <a href="http://twitter.com/<?php the_author_meta('twitter', $author_id);?>">@<?php the_author_meta('twitter', $author_id);?></a> · <?php echo date('M d, Y', strtotime($previous->post_date)); ?>  · <?php echo_views($previous->ID); ?> views<?php if (get_post_meta($previous->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($previous->ID, "_github", true); ?>">Github</a><?php } ?></h5>
@@ -232,67 +232,6 @@ if($first_post) :
   <?php endif; ?>
   </div>
 <?php endif; } ?>
-<?php if(!$currentHasImage && $previousHasImage) { ?>
-<script>
-/* $(window).scroll(function(e) {
-    var body = document.body,
-        html = document.documentElement;
-    var height = Math.max( body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight );
-    if($(window).scrollTop() > height - window.innerHeight - (500-window.innerHeight)-window.innerHeight*0.5 -125) {
-        $(".story-navigation .previous").css("margin-left",-125);
-        $(".story-navigation .next").css("margin-right",-125);
-    } else {
-        $(".story-navigation .previous").css("margin-left",0);
-        $(".story-navigation .next").css("margin-right",0);
-    }
-}); */
-</script>
-<?php } else if ($currentHasImage && $previousHasImage) {?>
-<script>
-/* $(window).scroll(function(e) {
-    var body = document.body,
-        html = document.documentElement;
-    var height = Math.max( body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight );
-    if($(window).scrollTop() < window.innerHeight/2+125 ||  $(window).scrollTop() > height - window.innerHeight - (500-window.innerHeight)-window.innerHeight*0.5 -125) {
-        $(".story-navigation .previous").css("margin-left",-125);
-        $(".story-navigation .next").css("margin-right",-125);
-    } else {
-        $(".story-navigation .previous").css("margin-left",0);
-        $(".story-navigation .next").css("margin-right",0);
-    }
-}); */
-</script>
-<?php } else if ($currentHasImage && !$previousHasImage) { ?>
-<script>
-/* $(window).scroll(function(e) {
-    var body = document.body,
-        html = document.documentElement;
-    var height = Math.max( body.scrollHeight, body.offsetHeight,
-        html.clientHeight, html.scrollHeight, html.offsetHeight );
-    if($(window).scrollTop() < window.innerHeight/2+125) {
-        $(".story-navigation .previous").css("margin-left",-125);
-        $(".story-navigation .next").css("margin-right",-125);
-    } else {
-        $(".story-navigation .previous").css("margin-left",0);
-        $(".story-navigation .next").css("margin-right",0);
-    }
-}); */
-</script>
-<?php } ?>
-<!--End Footer-->
-<!--
-<div class="container_12">
-    <div class="box-wrap2">
-        <div id="primary" class="site-content">
-            <div id="content" class="blog"  role="main" style="margin-top:0px !important">
-            </div>
-        </div>
-    </div>
-</div>
-</div>
--->
 <div class="navigation">
 <div class="alignleft"><?php previous_posts_link( '&laquo; Previous Entries' ); ?></div>
 <div class="alignright"><?php next_posts_link( 'Next Entries &raquo;', '' ); ?></div>
