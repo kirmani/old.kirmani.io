@@ -39,7 +39,7 @@
   <?php header("Access-Control-Allow-Origin: *"); ?>
 
   <!--Mobile DPI Scaling-->
-  <meta name="viewport" content="width=740" />
+  <meta name="viewport" content="width=640" />
   <meta http-equiv="Content-Type" content="application/vnd.wap.xhtml+xml; charset=utf-8" />
   <meta name="HandheldFriendly" content="true" />
   <meta name="apple-mobile-web-app-capable" content="yes" />

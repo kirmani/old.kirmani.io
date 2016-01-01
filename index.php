@@ -85,10 +85,10 @@ if (!empty( $next_post )): ?>
                             <div class="headline inner-title headline-top">
                                 <h1 class="title"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
                                 <div class="subtitle"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></div>
-                                <?php if (!is_page()) { ?><h3 class="author"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?>
+                                <?php if (!is_page()) { ?><h5 class="author"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?>
                                 <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
                                     <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
-                                    <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3><?php } ?>
+                                    <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h5><?php } ?>
                             </div>
                             </div>
                                 <div class="story-cover-arrow"></div>
@@ -101,9 +101,9 @@ if (!empty( $next_post )): ?>
                                 <h1 class="title" style="color:#000; text-shadow:none !important"><?php if (get_post_meta($post->ID, '_alt_title', true) == '') { the_title(); } else { echo get_post_meta($post->ID, '_alt_title', true); }?></h1>
                                 <div class="subtitle" style="color:#222; text-shadow:none !important"><?php echo get_post_meta($post->ID, '_subtitle', true); ?></div>
                                 <br />
-                                <?php if (!is_page()) { ?><h3 class="author noImage" style="text-shadow:none !important;color: rgba(0,0,0,0.65)"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
+                                <?php if (!is_page()) { ?><h5 class="author noImage" style="text-shadow:none !important;color: rgba(0,0,0,0.65)"><?php echo get_avatar( get_the_author_meta( 'ID' ), 30 ); ?> <?php echo the_author_meta( 'first_name' , $post->author ); ?> <?php echo the_author_meta( 'last_name' , $post->author); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
         <a href="http://twitter.com/<?php the_author_meta('twitter' );?>">@<?php the_author_meta('twitter' );?></a>
-        <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h3><?php } ?>
+        <?php endif; ?> · <?php the_date(); ?> · <?php echo_views(get_the_ID()); ?> views<?php if (get_post_meta($post->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($post->ID, "_github", true); ?>">Github</a><?php } ?> · <span id="ttr"></span> read</h5><?php } ?>
                             </div>
                             </div>
                         </div>
@@ -220,12 +220,12 @@ if($first_post) :
                                 </a>
                                 <div class="headline inner-title" style="top:110px !important">
                                 <hr style="border-top:1px solid #dededc">
-                                <h3 class="author"><strong>NEXT IN YOUR READING LIST</strong></h3><br />
+                                <h5 class="author"><strong>NEXT IN YOUR READING LIST</strong></h5><br />
                                 <h1 class="title"><?php echo $previous->post_title ?></h1>
                                 <div class="subtitle"><?php get_the_subtitle($previous) ?></div>
                                 <?php $author_id=$previous->post_author; ?>
-            <h3 class="author"><?php echo get_avatar( get_the_author_meta('ID'), 30 ); ?> <?php echo the_author_meta( 'first_name' , $author_id ); ?> <?php echo the_author_meta( 'last_name' , $author_id ); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
-    <a href="http://twitter.com/<?php the_author_meta('twitter', $author_id);?>">@<?php the_author_meta('twitter', $author_id);?></a> · <?php echo date('M d, Y', strtotime($previous->post_date)); ?>  · <?php echo_views($previous->ID); ?> views<?php if (get_post_meta($previous->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($previous->ID, "_github", true); ?>">Github</a><?php } ?></h3>
+            <h5 class="author"><?php echo get_avatar( get_the_author_meta('ID'), 30 ); ?> <?php echo the_author_meta( 'first_name' , $author_id ); ?> <?php echo the_author_meta( 'last_name' , $author_id ); ?> <?php if ( get_the_author_meta( 'twitter' ) ) : ?>
+    <a href="http://twitter.com/<?php the_author_meta('twitter', $author_id);?>">@<?php the_author_meta('twitter', $author_id);?></a> · <?php echo date('M d, Y', strtotime($previous->post_date)); ?>  · <?php echo_views($previous->ID); ?> views<?php if (get_post_meta($previous->ID, "_github", true) != '') {?> · Code on <a href="<?php echo get_post_meta($previous->ID, "_github", true); ?>">Github</a><?php } ?></h5>
 <?php endif; ?>
     </div>
     <?php endif; ?>

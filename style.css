@@ -260,12 +260,10 @@ html {
 	overflow-y: scroll;
 }
 body {
-	font-size:12px;
 	color:#1c1c1c;
 	margin:0;
 	padding:0;
 	margin: 0;
-	font-size: 1em;
 	line-height: 1.4;
 	overflow:hidden;
 	border-top: 3px solid #e22c29
@@ -447,7 +445,6 @@ tr.even td {
 }
 /* blockquote */
 .author {
-    font-size: 14px;
     font-style: normal;
 	color:#E19A42;
 }
@@ -755,18 +752,14 @@ height:360px;
     -o-transition: background .3s linear;  
     transition: background .3s linear;  
 }  
-.title {
-	letter-spacing: -0.02em;
-	color: #fff;
+.headline .title {
 	font-weight: 700;
 	font-style: normal;
 	letter-spacing: -0.04em;
-	font-size: 50px;
 	line-height: 1.1;
 	font-family: 'HelveticaNeue-Light', Arial, Helvetica, sans-serif;
 }
 .subtitle {
-	font-size:28px;
 	font-weight: lighter;
 	padding-bottom:0px;
 	color:#ddd;
@@ -777,7 +770,6 @@ height:360px;
 }
 .author{
 	position: relative;
-	font-size: 14px;
 	margin-top: 0;
 	font-weight: lighter;
 	padding-bottom: 0px;
