@@ -149,9 +149,10 @@ td {
 .headline .title {
   font-weight: 700;
   font-style: normal;
-  letter-spacing: -0.04em;
+  // letter-spacing: -0.04em;
   line-height: 1.1;
-  font-family: 'HelveticaNeue-Light', Arial, Helvetica, sans-serif;
+  font-family: Roboto, Geneva, Arial, sans-serif;
+  // font-family: 'HelveticaNeue-Light', Arial, Helvetica, sans-serif;
 }
 .subtitle {
   font-weight: lighter;

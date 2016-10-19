@@ -147,7 +147,6 @@ a:hover {
 #content ul, #content ol {
 	margin: 0;
 	padding: 0 0 0 40px;
-	font-family: 'HelveticaNeue-Light', Arial, Helvetica, sans-serif;
 }
 /* Responsive CSS */
 @media all and (max-width: 1024px){
@@ -172,3 +171,14 @@ a:hover {
 		left: 10px;
 	}
 }
+
+/* TODO(kirmani): Fix. Make cleaner typography implementation. */
+#primary {
+  font-family: 'PT Serif', Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+/*
+h1, h2, h3, h4, h5, h6 {
+  font-family: Roboto, Geneva, Arial, sans-serif;
+}
+*/
