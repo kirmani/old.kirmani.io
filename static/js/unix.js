@@ -4,25 +4,20 @@ $(function () {
     'max', 'min'];
   DIRECTORY_VALUE = "DIRECTORY_VALUE";
   var DIRECTORY = {
-    "about": "http://kirmani.io/about/",
-    "blog": "http://kirmani.io/blog/",
-    "github": "http://github.com/kirmani/",
-    "linkedin": "http://linkedin.com/in/sekrim/",
-    "resume": "http://kirmani.io/resume/",
-    "twitter": "http://twitter.com/SeanKirmani",
+    "about": "https://kirmani.ai/",
+    "blog": "https://kirmani.blog/",
+    "github": "https://github.com/kirmani/",
+    "linkedin": "https://linkedin.com/in/sekrim/",
+    "resume": "https://kirmani.ai/resume",
+    "twitter": "https://twitter.com/SeanKirmani",
   };
 
   var USER = 'guest';
 
   $("#term").hide();
 
-  function sendMail(message) {
-    var link = "mailto:sean@kirmani.io"
-      + "?subject=" + escape("Kirmani Terminal Message")
-      + "&body=" + escape(message)
-      ;
-
-    window.location.href = link;
+  function showContact(term) {
+    term.echo("Contact: https://kirmani.ai/resume");
   }
 
   function goToURL(url) {
@@ -79,11 +74,7 @@ $(function () {
         }
         break;
       case "MAIL":
-        if (option !== '') {
-          sendMail(option);
-        } else {
-          term.echo("Mail: Usage: mail [message]");
-        }
+        showContact(term);
         break;
       case "CAT":
         found = false;
